@@ -1,8 +1,8 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Tue Feb 18 09:09:33 2020
-| Host         : DESKTOP-1GCDH6O running 64-bit major release  (build 9200)
+| Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
+| Date         : Tue Feb 18 11:34:01 2020
+| Host         : AK113-03 running 64-bit major release  (build 9200)
 | Command      : report_drc -file lab3_top_drc_opted.rpt -pb lab3_top_drc_opted.pb -rpx lab3_top_drc_opted.rpx
 | Design       : lab3_top
 | Device       : xc7a35tcpg236-1

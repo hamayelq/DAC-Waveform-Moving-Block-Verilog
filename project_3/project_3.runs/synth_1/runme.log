@@ -3,67 +3,69 @@
     with args -log lab3_top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source lab3_top.tcl
 
 
-****** Vivado v2019.2 (64-bit)
-  **** SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
-  **** IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+****** Vivado v2019.1 (64-bit)
+  **** SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+  **** IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
     ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 
 source lab3_top.tcl -notrace
 Command: synth_design -top lab3_top -part xc7a35tcpg236-1
 Starting synth_design
+INFO: [IP_Flow 19-2162] IP 'clk_wiz_0' is locked:
+* IP definition 'Clocking Wizard (6.0)' for IP 'clk_wiz_0' (customized with software release 2019.2) has a different revision in the IP Catalog.
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 7912 
+INFO: Helper process launched with PID 9316 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 846.270 ; gain = 234.250
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 803.953 ; gain = 177.645
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'lab3_top' [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/lab3_top.v:3]
-INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [c:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.v:71]
-INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0_clk_wiz' [c:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_clk_wiz.v:69]
-INFO: [Synth 8-6157] synthesizing module 'IBUF' [C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:32937]
+INFO: [Synth 8-6157] synthesizing module 'lab3_top' [C:/Users/hqureshi/Documents/project3_bk/project_3.srcs/sources_1/imports/project_3.srcs/lab3_top.v:3]
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [c:/Users/hqureshi/Documents/project3_bk/project_3.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.v:71]
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0_clk_wiz' [c:/Users/hqureshi/Documents/project3_bk/project_3.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_clk_wiz.v:69]
+INFO: [Synth 8-6157] synthesizing module 'IBUF' [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:32856]
 	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
 	Parameter IBUF_DELAY_VALUE bound to: 0 - type: string 
 	Parameter IBUF_LOW_PWR bound to: TRUE - type: string 
 	Parameter IFD_DELAY_VALUE bound to: AUTO - type: string 
 	Parameter IOSTANDARD bound to: DEFAULT - type: string 
-INFO: [Synth 8-6155] done synthesizing module 'IBUF' (1#1) [C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:32937]
-INFO: [Synth 8-6157] synthesizing module 'MMCME2_ADV' [C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:39940]
+INFO: [Synth 8-6155] done synthesizing module 'IBUF' (1#1) [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:32856]
+INFO: [Synth 8-6157] synthesizing module 'MMCME2_ADV' [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:39813]
 	Parameter BANDWIDTH bound to: OPTIMIZED - type: string 
-	Parameter CLKFBOUT_MULT_F bound to: 10.000000 - type: double 
-	Parameter CLKFBOUT_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKFBOUT_MULT_F bound to: 10.000000 - type: float 
+	Parameter CLKFBOUT_PHASE bound to: 0.000000 - type: float 
 	Parameter CLKFBOUT_USE_FINE_PS bound to: FALSE - type: string 
-	Parameter CLKIN1_PERIOD bound to: 10.000000 - type: double 
-	Parameter CLKIN2_PERIOD bound to: 0.000000 - type: double 
-	Parameter CLKOUT0_DIVIDE_F bound to: 40.000000 - type: double 
-	Parameter CLKOUT0_DUTY_CYCLE bound to: 0.500000 - type: double 
-	Parameter CLKOUT0_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKIN1_PERIOD bound to: 10.000000 - type: float 
+	Parameter CLKIN2_PERIOD bound to: 0.000000 - type: float 
+	Parameter CLKOUT0_DIVIDE_F bound to: 40.000000 - type: float 
+	Parameter CLKOUT0_DUTY_CYCLE bound to: 0.500000 - type: float 
+	Parameter CLKOUT0_PHASE bound to: 0.000000 - type: float 
 	Parameter CLKOUT0_USE_FINE_PS bound to: FALSE - type: string 
 	Parameter CLKOUT1_DIVIDE bound to: 100 - type: integer 
-	Parameter CLKOUT1_DUTY_CYCLE bound to: 0.500000 - type: double 
-	Parameter CLKOUT1_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT1_DUTY_CYCLE bound to: 0.500000 - type: float 
+	Parameter CLKOUT1_PHASE bound to: 0.000000 - type: float 
 	Parameter CLKOUT1_USE_FINE_PS bound to: FALSE - type: string 
 	Parameter CLKOUT2_DIVIDE bound to: 1 - type: integer 
-	Parameter CLKOUT2_DUTY_CYCLE bound to: 0.500000 - type: double 
-	Parameter CLKOUT2_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT2_DUTY_CYCLE bound to: 0.500000 - type: float 
+	Parameter CLKOUT2_PHASE bound to: 0.000000 - type: float 
 	Parameter CLKOUT2_USE_FINE_PS bound to: FALSE - type: string 
 	Parameter CLKOUT3_DIVIDE bound to: 1 - type: integer 
-	Parameter CLKOUT3_DUTY_CYCLE bound to: 0.500000 - type: double 
-	Parameter CLKOUT3_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT3_DUTY_CYCLE bound to: 0.500000 - type: float 
+	Parameter CLKOUT3_PHASE bound to: 0.000000 - type: float 
 	Parameter CLKOUT3_USE_FINE_PS bound to: FALSE - type: string 
 	Parameter CLKOUT4_CASCADE bound to: FALSE - type: string 
 	Parameter CLKOUT4_DIVIDE bound to: 1 - type: integer 
-	Parameter CLKOUT4_DUTY_CYCLE bound to: 0.500000 - type: double 
-	Parameter CLKOUT4_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT4_DUTY_CYCLE bound to: 0.500000 - type: float 
+	Parameter CLKOUT4_PHASE bound to: 0.000000 - type: float 
 	Parameter CLKOUT4_USE_FINE_PS bound to: FALSE - type: string 
 	Parameter CLKOUT5_DIVIDE bound to: 1 - type: integer 
-	Parameter CLKOUT5_DUTY_CYCLE bound to: 0.500000 - type: double 
-	Parameter CLKOUT5_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT5_DUTY_CYCLE bound to: 0.500000 - type: float 
+	Parameter CLKOUT5_PHASE bound to: 0.000000 - type: float 
 	Parameter CLKOUT5_USE_FINE_PS bound to: FALSE - type: string 
 	Parameter CLKOUT6_DIVIDE bound to: 1 - type: integer 
-	Parameter CLKOUT6_DUTY_CYCLE bound to: 0.500000 - type: double 
-	Parameter CLKOUT6_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT6_DUTY_CYCLE bound to: 0.500000 - type: float 
+	Parameter CLKOUT6_PHASE bound to: 0.000000 - type: float 
 	Parameter CLKOUT6_USE_FINE_PS bound to: FALSE - type: string 
 	Parameter COMPENSATION bound to: ZHOLD - type: string 
 	Parameter DIVCLK_DIVIDE bound to: 1 - type: integer 
@@ -72,30 +74,30 @@ INFO: [Synth 8-6157] synthesizing module 'MMCME2_ADV' [C:/Xilinx/Vivado/2019.2/s
 	Parameter IS_PSINCDEC_INVERTED bound to: 1'b0 
 	Parameter IS_PWRDWN_INVERTED bound to: 1'b0 
 	Parameter IS_RST_INVERTED bound to: 1'b0 
-	Parameter REF_JITTER1 bound to: 0.010000 - type: double 
-	Parameter REF_JITTER2 bound to: 0.010000 - type: double 
+	Parameter REF_JITTER1 bound to: 0.010000 - type: float 
+	Parameter REF_JITTER2 bound to: 0.010000 - type: float 
 	Parameter SS_EN bound to: FALSE - type: string 
 	Parameter SS_MODE bound to: CENTER_HIGH - type: string 
 	Parameter SS_MOD_PERIOD bound to: 10000 - type: integer 
 	Parameter STARTUP_WAIT bound to: FALSE - type: string 
-INFO: [Synth 8-6155] done synthesizing module 'MMCME2_ADV' (2#1) [C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:39940]
-INFO: [Synth 8-6157] synthesizing module 'BUFG' [C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:1075]
-INFO: [Synth 8-6155] done synthesizing module 'BUFG' (3#1) [C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:1075]
-INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0_clk_wiz' (4#1) [c:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_clk_wiz.v:69]
-INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (5#1) [c:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.v:71]
-INFO: [Synth 8-6157] synthesizing module 'debouncer' [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/debouncer.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'MMCME2_ADV' (2#1) [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:39813]
+INFO: [Synth 8-6157] synthesizing module 'BUFG' [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:1075]
+INFO: [Synth 8-6155] done synthesizing module 'BUFG' (3#1) [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:1075]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0_clk_wiz' (4#1) [c:/Users/hqureshi/Documents/project3_bk/project_3.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_clk_wiz.v:69]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (5#1) [c:/Users/hqureshi/Documents/project3_bk/project_3.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.v:71]
+INFO: [Synth 8-6157] synthesizing module 'debouncer' [C:/Users/hqureshi/Documents/project3_bk/project_3.srcs/sources_1/imports/project_3.srcs/debouncer.v:3]
 	Parameter s0 bound to: 2'b00 
 	Parameter s1 bound to: 2'b01 
 	Parameter s2 bound to: 2'b10 
 	Parameter s3 bound to: 2'b11 
-INFO: [Synth 8-6155] done synthesizing module 'debouncer' (6#1) [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/debouncer.v:3]
-INFO: [Synth 8-6157] synthesizing module 'vga_blocks' [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/vga_blocks.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'debouncer' (6#1) [C:/Users/hqureshi/Documents/project3_bk/project_3.srcs/sources_1/imports/project_3.srcs/debouncer.v:3]
+INFO: [Synth 8-6157] synthesizing module 'vga_blocks' [C:/Users/hqureshi/Documents/project3_bk/project_3.srcs/sources_1/imports/project_3.srcs/vga_blocks.v:3]
 	Parameter zeroes bound to: 4'b0000 
-	Parameter ones bound to: 4'b0000 
-INFO: [Synth 8-6155] done synthesizing module 'vga_blocks' (7#1) [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/vga_blocks.v:3]
-INFO: [Synth 8-638] synthesizing module 'vga_controller_640_60' [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/vga_controller_640_60.vhd:88]
-INFO: [Synth 8-256] done synthesizing module 'vga_controller_640_60' (8#1) [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/vga_controller_640_60.vhd:88]
-INFO: [Synth 8-6157] synthesizing module 'seven_seg' [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/seven_seg.v:3]
+	Parameter ones bound to: 4'b1111 
+INFO: [Synth 8-638] synthesizing module 'vga_controller_640_60' [C:/Users/hqureshi/Documents/project3_bk/project_3.srcs/sources_1/imports/project_3.srcs/vga_controller_640_60.vhd:88]
+INFO: [Synth 8-256] done synthesizing module 'vga_controller_640_60' (7#1) [C:/Users/hqureshi/Documents/project3_bk/project_3.srcs/sources_1/imports/project_3.srcs/vga_controller_640_60.vhd:88]
+INFO: [Synth 8-6155] done synthesizing module 'vga_blocks' (8#1) [C:/Users/hqureshi/Documents/project3_bk/project_3.srcs/sources_1/imports/project_3.srcs/vga_blocks.v:3]
+INFO: [Synth 8-6157] synthesizing module 'seven_seg' [C:/Users/hqureshi/Documents/project3_bk/project_3.srcs/sources_1/imports/project_3.srcs/seven_seg.v:3]
 	Parameter display0 bound to: 7'b0000001 
 	Parameter display1 bound to: 7'b1001111 
 	Parameter display2 bound to: 7'b0010010 
@@ -112,37 +114,14 @@ INFO: [Synth 8-6157] synthesizing module 'seven_seg' [C:/Users/Nam Tran/Document
 	Parameter displayD bound to: 7'b1000010 
 	Parameter displayE bound to: 7'b0110000 
 	Parameter displayF bound to: 7'b0111000 
-INFO: [Synth 8-6155] done synthesizing module 'seven_seg' (9#1) [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/seven_seg.v:3]
-WARNING: [Synth 8-3848] Net sync in module/entity lab3_top does not have driver. [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/lab3_top.v:19]
-WARNING: [Synth 8-3848] Net sdata in module/entity lab3_top does not have driver. [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/lab3_top.v:20]
-INFO: [Synth 8-6155] done synthesizing module 'lab3_top' (10#1) [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/lab3_top.v:3]
-WARNING: [Synth 8-3331] design vga_blocks has unconnected port blank
-WARNING: [Synth 8-3331] design vga_blocks has unconnected port vcount[10]
-WARNING: [Synth 8-3331] design vga_blocks has unconnected port vcount[9]
-WARNING: [Synth 8-3331] design vga_blocks has unconnected port vcount[8]
-WARNING: [Synth 8-3331] design vga_blocks has unconnected port vcount[7]
-WARNING: [Synth 8-3331] design vga_blocks has unconnected port vcount[6]
-WARNING: [Synth 8-3331] design vga_blocks has unconnected port vcount[5]
-WARNING: [Synth 8-3331] design vga_blocks has unconnected port vcount[4]
-WARNING: [Synth 8-3331] design vga_blocks has unconnected port vcount[3]
-WARNING: [Synth 8-3331] design vga_blocks has unconnected port vcount[2]
-WARNING: [Synth 8-3331] design vga_blocks has unconnected port vcount[1]
-WARNING: [Synth 8-3331] design vga_blocks has unconnected port vcount[0]
-WARNING: [Synth 8-3331] design vga_blocks has unconnected port hcount[10]
-WARNING: [Synth 8-3331] design vga_blocks has unconnected port hcount[9]
-WARNING: [Synth 8-3331] design vga_blocks has unconnected port hcount[8]
-WARNING: [Synth 8-3331] design vga_blocks has unconnected port hcount[7]
-WARNING: [Synth 8-3331] design vga_blocks has unconnected port hcount[6]
-WARNING: [Synth 8-3331] design vga_blocks has unconnected port hcount[5]
-WARNING: [Synth 8-3331] design vga_blocks has unconnected port hcount[4]
-WARNING: [Synth 8-3331] design vga_blocks has unconnected port hcount[3]
-WARNING: [Synth 8-3331] design vga_blocks has unconnected port hcount[2]
-WARNING: [Synth 8-3331] design vga_blocks has unconnected port hcount[1]
-WARNING: [Synth 8-3331] design vga_blocks has unconnected port hcount[0]
+INFO: [Synth 8-6155] done synthesizing module 'seven_seg' (9#1) [C:/Users/hqureshi/Documents/project3_bk/project_3.srcs/sources_1/imports/project_3.srcs/seven_seg.v:3]
+WARNING: [Synth 8-3848] Net sync in module/entity lab3_top does not have driver. [C:/Users/hqureshi/Documents/project3_bk/project_3.srcs/sources_1/imports/project_3.srcs/lab3_top.v:19]
+WARNING: [Synth 8-3848] Net sdata in module/entity lab3_top does not have driver. [C:/Users/hqureshi/Documents/project3_bk/project_3.srcs/sources_1/imports/project_3.srcs/lab3_top.v:20]
+INFO: [Synth 8-6155] done synthesizing module 'lab3_top' (10#1) [C:/Users/hqureshi/Documents/project3_bk/project_3.srcs/sources_1/imports/project_3.srcs/lab3_top.v:3]
 WARNING: [Synth 8-3331] design lab3_top has unconnected port sync
 WARNING: [Synth 8-3331] design lab3_top has unconnected port sdata
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 919.926 ; gain = 307.906
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 868.629 ; gain = 242.320
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -155,158 +134,61 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 919.926 ; gain = 307.906
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 868.629 ; gain = 242.320
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 919.926 ; gain = 307.906
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 868.629 ; gain = 242.320
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.019 . Memory (MB): peak = 919.926 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [c:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc] for cell 'mmcm_inst/inst'
-Finished Parsing XDC File [c:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc] for cell 'mmcm_inst/inst'
-Parsing XDC File [c:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc] for cell 'mmcm_inst/inst'
-Finished Parsing XDC File [c:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc] for cell 'mmcm_inst/inst'
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [c:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/lab3_top_propImpl.xdc].
+Parsing XDC File [c:/Users/hqureshi/Documents/project3_bk/project_3.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc] for cell 'mmcm_inst/inst'
+Finished Parsing XDC File [c:/Users/hqureshi/Documents/project3_bk/project_3.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc] for cell 'mmcm_inst/inst'
+Parsing XDC File [c:/Users/hqureshi/Documents/project3_bk/project_3.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc] for cell 'mmcm_inst/inst'
+Finished Parsing XDC File [c:/Users/hqureshi/Documents/project3_bk/project_3.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc] for cell 'mmcm_inst/inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [c:/Users/hqureshi/Documents/project3_bk/project_3.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/lab3_top_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/lab3_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 INFO: [Timing 38-2] Deriving generated clocks
-Parsing XDC File [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/constrs_1/new/lab3.xdc]
-WARNING: [Vivado 12-584] No ports matched 'btnU'. [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/constrs_1/new/lab3.xdc:113]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/constrs_1/new/lab3.xdc:113]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'btnU'. [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/constrs_1/new/lab3.xdc:114]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/constrs_1/new/lab3.xdc:114]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'btnL'. [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/constrs_1/new/lab3.xdc:115]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/constrs_1/new/lab3.xdc:115]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'btnL'. [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/constrs_1/new/lab3.xdc:116]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/constrs_1/new/lab3.xdc:116]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'btnR'. [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/constrs_1/new/lab3.xdc:117]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/constrs_1/new/lab3.xdc:117]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'btnR'. [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/constrs_1/new/lab3.xdc:118]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/constrs_1/new/lab3.xdc:118]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'btnD'. [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/constrs_1/new/lab3.xdc:119]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/constrs_1/new/lab3.xdc:119]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'btnD'. [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/constrs_1/new/lab3.xdc:120]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/constrs_1/new/lab3.xdc:120]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sck'. [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/constrs_1/new/lab3.xdc:135]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/constrs_1/new/lab3.xdc:135]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sck'. [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/constrs_1/new/lab3.xdc:136]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/constrs_1/new/lab3.xdc:136]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'SEG[6]'. [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/constrs_1/new/lab3.xdc:267]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/constrs_1/new/lab3.xdc:267]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'SEG[6]'. [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/constrs_1/new/lab3.xdc:268]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/constrs_1/new/lab3.xdc:268]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'SEG[5]'. [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/constrs_1/new/lab3.xdc:269]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/constrs_1/new/lab3.xdc:269]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'SEG[5]'. [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/constrs_1/new/lab3.xdc:270]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/constrs_1/new/lab3.xdc:270]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'SEG[4]'. [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/constrs_1/new/lab3.xdc:271]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/constrs_1/new/lab3.xdc:271]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'SEG[4]'. [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/constrs_1/new/lab3.xdc:272]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/constrs_1/new/lab3.xdc:272]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'SEG[3]'. [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/constrs_1/new/lab3.xdc:273]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/constrs_1/new/lab3.xdc:273]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'SEG[3]'. [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/constrs_1/new/lab3.xdc:274]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/constrs_1/new/lab3.xdc:274]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'SEG[2]'. [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/constrs_1/new/lab3.xdc:275]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/constrs_1/new/lab3.xdc:275]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'SEG[2]'. [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/constrs_1/new/lab3.xdc:276]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/constrs_1/new/lab3.xdc:276]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'SEG[1]'. [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/constrs_1/new/lab3.xdc:277]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/constrs_1/new/lab3.xdc:277]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'SEG[1]'. [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/constrs_1/new/lab3.xdc:278]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/constrs_1/new/lab3.xdc:278]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'SEG[0]'. [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/constrs_1/new/lab3.xdc:279]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/constrs_1/new/lab3.xdc:279]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'SEG[0]'. [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/constrs_1/new/lab3.xdc:280]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/constrs_1/new/lab3.xdc:280]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'ANODE[0]'. [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/constrs_1/new/lab3.xdc:282]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/constrs_1/new/lab3.xdc:282]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'ANODE[0]'. [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/constrs_1/new/lab3.xdc:283]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/constrs_1/new/lab3.xdc:283]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'ANODE[1]'. [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/constrs_1/new/lab3.xdc:284]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/constrs_1/new/lab3.xdc:284]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'ANODE[1]'. [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/constrs_1/new/lab3.xdc:285]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/constrs_1/new/lab3.xdc:285]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'ANODE[2]'. [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/constrs_1/new/lab3.xdc:286]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/constrs_1/new/lab3.xdc:286]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'ANODE[2]'. [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/constrs_1/new/lab3.xdc:287]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/constrs_1/new/lab3.xdc:287]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'ANODE[3]'. [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/constrs_1/new/lab3.xdc:288]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/constrs_1/new/lab3.xdc:288]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'ANODE[3]'. [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/constrs_1/new/lab3.xdc:289]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/constrs_1/new/lab3.xdc:289]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-Finished Parsing XDC File [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/constrs_1/new/lab3.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/constrs_1/new/lab3.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/lab3_top_propImpl.xdc].
+Parsing XDC File [C:/Users/hqureshi/Documents/project3_bk/project_3.srcs/constrs_1/new/lab3.xdc]
+Finished Parsing XDC File [C:/Users/hqureshi/Documents/project3_bk/project_3.srcs/constrs_1/new/lab3.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/hqureshi/Documents/project3_bk/project_3.srcs/constrs_1/new/lab3.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/lab3_top_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/lab3_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Parsing XDC File [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.runs/synth_1/dont_touch.xdc]
-Finished Parsing XDC File [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.runs/synth_1/dont_touch.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.runs/synth_1/dont_touch.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/lab3_top_propImpl.xdc].
+Parsing XDC File [C:/Users/hqureshi/Documents/project3_bk/project_3.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/Users/hqureshi/Documents/project3_bk/project_3.runs/synth_1/dont_touch.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/hqureshi/Documents/project3_bk/project_3.runs/synth_1/dont_touch.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/lab3_top_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/lab3_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 INFO: [Timing 38-2] Deriving generated clocks
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1013.750 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 992.164 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.050 . Memory (MB): peak = 1013.750 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 992.164 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:01:00 ; elapsed = 00:01:04 . Memory (MB): peak = 1013.750 ; gain = 401.730
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 992.164 ; gain = 365.855
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:01:00 ; elapsed = 00:01:04 . Memory (MB): peak = 1013.750 ; gain = 401.730
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 992.164 ; gain = 365.855
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property DONT_TOUCH = true for mmcm_inst/inst. (constraint file  {C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.runs/synth_1/dont_touch.xdc}, line 10).
+Applied set_property DONT_TOUCH = true for mmcm_inst/inst. (constraint file  C:/Users/hqureshi/Documents/project3_bk/project_3.runs/synth_1/dont_touch.xdc, line 10).
 Applied set_property DONT_TOUCH = true for mmcm_inst. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:00 ; elapsed = 00:01:04 . Memory (MB): peak = 1013.750 ; gain = 401.730
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 992.164 ; gain = 365.855
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'currState_reg' in module 'debouncer'
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/vga_blocks.v:36]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.srcs/vga_blocks.v:46]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/hqureshi/Documents/project3_bk/project_3.srcs/sources_1/imports/project_3.srcs/vga_blocks.v:50]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/hqureshi/Documents/project3_bk/project_3.srcs/sources_1/imports/project_3.srcs/vga_blocks.v:60]
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -317,7 +199,7 @@ INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To p
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'currState_reg' using encoding 'sequential' in module 'debouncer'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:02 ; elapsed = 00:01:06 . Memory (MB): peak = 1013.750 ; gain = 401.730
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 992.164 ; gain = 365.855
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -332,18 +214,18 @@ Detailed RTL Component Info :
 +---Adders : 
 	   2 Input     16 Bit       Adders := 1     
 	   2 Input     11 Bit       Adders := 2     
-	   2 Input      5 Bit       Adders := 6     
+	   2 Input      5 Bit       Adders := 5     
 	   2 Input      4 Bit       Adders := 3     
 	   2 Input      2 Bit       Adders := 1     
 +---Registers : 
 	               16 Bit    Registers := 1     
 	               11 Bit    Registers := 2     
-	                5 Bit    Registers := 6     
+	                5 Bit    Registers := 5     
 	                4 Bit    Registers := 3     
 	                2 Bit    Registers := 1     
 	                1 Bit    Registers := 9     
 +---Muxes : 
-	   2 Input      5 Bit        Muxes := 10    
+	   2 Input      5 Bit        Muxes := 8     
 	   4 Input      4 Bit        Muxes := 2     
 	   2 Input      4 Bit        Muxes := 2     
 	   4 Input      2 Bit        Muxes := 4     
@@ -360,12 +242,8 @@ Hierarchical RTL Component report
 Module lab3_top 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input      5 Bit       Adders := 1     
 	   2 Input      4 Bit       Adders := 2     
-+---Registers : 
-	                5 Bit    Registers := 1     
 +---Muxes : 
-	   2 Input      5 Bit        Muxes := 2     
 	   2 Input      4 Bit        Muxes := 2     
 Module debouncer 
 Detailed RTL Component Info : 
@@ -379,6 +257,15 @@ Detailed RTL Component Info :
 	   4 Input      2 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 4     
 	   2 Input      1 Bit        Muxes := 2     
+Module vga_controller_640_60 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     11 Bit       Adders := 2     
++---Registers : 
+	               11 Bit    Registers := 2     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 2     
 Module vga_blocks 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -391,15 +278,6 @@ Detailed RTL Component Info :
 +---Muxes : 
 	   5 Input      1 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 5     
-Module vga_controller_640_60 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input     11 Bit       Adders := 2     
-+---Registers : 
-	               11 Bit    Registers := 2     
-	                1 Bit    Registers := 3     
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 2     
 Module seven_seg 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -428,47 +306,10 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
-WARNING: [Synth 8-3917] design lab3_top has port vgaRed[3] driven by constant 0
-WARNING: [Synth 8-3917] design lab3_top has port vgaRed[2] driven by constant 0
-WARNING: [Synth 8-3917] design lab3_top has port vgaRed[1] driven by constant 0
-WARNING: [Synth 8-3917] design lab3_top has port vgaRed[0] driven by constant 0
-WARNING: [Synth 8-3917] design lab3_top has port vgaGreen[3] driven by constant 0
-WARNING: [Synth 8-3917] design lab3_top has port vgaGreen[2] driven by constant 0
-WARNING: [Synth 8-3917] design lab3_top has port vgaGreen[1] driven by constant 0
-WARNING: [Synth 8-3917] design lab3_top has port vgaGreen[0] driven by constant 0
-WARNING: [Synth 8-3917] design lab3_top has port vgaBlue[3] driven by constant 0
-WARNING: [Synth 8-3917] design lab3_top has port vgaBlue[2] driven by constant 0
-WARNING: [Synth 8-3917] design lab3_top has port vgaBlue[1] driven by constant 0
-WARNING: [Synth 8-3917] design lab3_top has port vgaBlue[0] driven by constant 0
 WARNING: [Synth 8-3331] design lab3_top has unconnected port sync
 WARNING: [Synth 8-3331] design lab3_top has unconnected port sdata
-INFO: [Synth 8-3886] merging instance 'count_reg[4]' (FDC) to 'b4/count_reg[4]'
-INFO: [Synth 8-3886] merging instance 'count_reg[3]' (FDC) to 'b4/count_reg[4]'
-INFO: [Synth 8-3886] merging instance 'count_reg[2]' (FDC) to 'b4/count_reg[4]'
-INFO: [Synth 8-3886] merging instance 'count_reg[1]' (FDC) to 'b4/count_reg[4]'
-INFO: [Synth 8-3886] merging instance 'count_reg[0]' (FDC) to 'b4/count_reg[4]'
-INFO: [Synth 8-3886] merging instance 'b4/count_reg[4]' (FDC) to 'b4/count_reg[3]'
-INFO: [Synth 8-3886] merging instance 'b4/count_reg[3]' (FDC) to 'b4/count_reg[2]'
-INFO: [Synth 8-3886] merging instance 'b4/count_reg[2]' (FDC) to 'b4/count_reg[1]'
-INFO: [Synth 8-3886] merging instance 'b4/count_reg[0]' (FDC) to 'b4/count_reg[1]'
-INFO: [Synth 8-3886] merging instance 'b4/count_reg[1]' (FDC) to 'b3/count_reg[4]'
-INFO: [Synth 8-3886] merging instance 'b3/count_reg[4]' (FDC) to 'b3/count_reg[3]'
-INFO: [Synth 8-3886] merging instance 'b3/count_reg[3]' (FDC) to 'b3/count_reg[2]'
-INFO: [Synth 8-3886] merging instance 'b3/count_reg[2]' (FDC) to 'b3/count_reg[1]'
-INFO: [Synth 8-3886] merging instance 'b3/count_reg[0]' (FDC) to 'b3/count_reg[1]'
-INFO: [Synth 8-3886] merging instance 'b3/count_reg[1]' (FDC) to 'b2/count_reg[4]'
-INFO: [Synth 8-3886] merging instance 'b1/count_reg[4]' (FDC) to 'b2/count_reg[4]'
-INFO: [Synth 8-3886] merging instance 'b1/count_reg[3]' (FDC) to 'b2/count_reg[4]'
-INFO: [Synth 8-3886] merging instance 'b1/count_reg[2]' (FDC) to 'b2/count_reg[4]'
-INFO: [Synth 8-3886] merging instance 'b1/count_reg[0]' (FDC) to 'b2/count_reg[4]'
-INFO: [Synth 8-3886] merging instance 'b1/count_reg[1]' (FDC) to 'b2/count_reg[4]'
-INFO: [Synth 8-3886] merging instance 'b2/count_reg[4]' (FDC) to 'b2/count_reg[3]'
-INFO: [Synth 8-3886] merging instance 'b2/count_reg[3]' (FDC) to 'b2/count_reg[2]'
-INFO: [Synth 8-3886] merging instance 'b2/count_reg[2]' (FDC) to 'b2/count_reg[1]'
-INFO: [Synth 8-3886] merging instance 'b2/count_reg[0]' (FDC) to 'b2/count_reg[1]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\b2/count_reg[1] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:14 ; elapsed = 00:01:18 . Memory (MB): peak = 1013.750 ; gain = 401.730
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 992.164 ; gain = 365.855
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -480,13 +321,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:50 ; elapsed = 00:01:55 . Memory (MB): peak = 1013.750 ; gain = 401.730
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 992.164 ; gain = 365.855
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:50 ; elapsed = 00:01:55 . Memory (MB): peak = 1014.102 ; gain = 402.082
+Finished Timing Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 992.164 ; gain = 365.855
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -497,16 +338,8 @@ Report RTL Partitions:
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-3332] Sequential element (b1/FSM_sequential_currState_reg[1]) is unused and will be removed from module lab3_top.
-WARNING: [Synth 8-3332] Sequential element (b1/FSM_sequential_currState_reg[0]) is unused and will be removed from module lab3_top.
-WARNING: [Synth 8-3332] Sequential element (b2/FSM_sequential_currState_reg[1]) is unused and will be removed from module lab3_top.
-WARNING: [Synth 8-3332] Sequential element (b2/FSM_sequential_currState_reg[0]) is unused and will be removed from module lab3_top.
-WARNING: [Synth 8-3332] Sequential element (b3/FSM_sequential_currState_reg[1]) is unused and will be removed from module lab3_top.
-WARNING: [Synth 8-3332] Sequential element (b3/FSM_sequential_currState_reg[0]) is unused and will be removed from module lab3_top.
-WARNING: [Synth 8-3332] Sequential element (b4/FSM_sequential_currState_reg[1]) is unused and will be removed from module lab3_top.
-WARNING: [Synth 8-3332] Sequential element (b4/FSM_sequential_currState_reg[0]) is unused and will be removed from module lab3_top.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:51 ; elapsed = 00:01:56 . Memory (MB): peak = 1014.918 ; gain = 402.898
+Finished Technology Mapping : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 992.164 ; gain = 365.855
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -530,20 +363,8 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:02:12 ; elapsed = 00:02:18 . Memory (MB): peak = 1021.648 ; gain = 409.629
+Finished IO Insertion : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 992.164 ; gain = 365.855
 ---------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Renaming Generated Instances
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:02:12 ; elapsed = 00:02:18 . Memory (MB): peak = 1021.648 ; gain = 409.629
----------------------------------------------------------------------------------
-
-Report RTL Partitions: 
-+-+--------------+------------+----------+
-| |RTL Partition |Replication |Instances |
-+-+--------------+------------+----------+
-+-+--------------+------------+----------+
 
 Report Check Netlist: 
 +------+------------------+-------+---------+-------+------------------+
@@ -552,28 +373,40 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 992.164 ; gain = 365.855
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:12 ; elapsed = 00:02:18 . Memory (MB): peak = 1021.648 ; gain = 409.629
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 992.164 ; gain = 365.855
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:02:12 ; elapsed = 00:02:18 . Memory (MB): peak = 1021.648 ; gain = 409.629
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 992.164 ; gain = 365.855
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:02:12 ; elapsed = 00:02:18 . Memory (MB): peak = 1021.648 ; gain = 409.629
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 992.164 ; gain = 365.855
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:02:12 ; elapsed = 00:02:18 . Memory (MB): peak = 1021.648 ; gain = 409.629
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 992.164 ; gain = 365.855
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -590,53 +423,58 @@ Report Cell Usage:
 |      |Cell       |Count |
 +------+-----------+------+
 |1     |BUFG       |     3|
-|2     |CARRY4     |     4|
-|3     |LUT1       |     3|
-|4     |LUT2       |    12|
-|5     |LUT3       |     5|
-|6     |LUT4       |    13|
-|7     |LUT5       |     6|
-|8     |LUT6       |    13|
+|2     |CARRY4     |    12|
+|3     |LUT1       |     8|
+|4     |LUT2       |    33|
+|5     |LUT3       |    27|
+|6     |LUT4       |    23|
+|7     |LUT5       |    19|
+|8     |LUT6       |    35|
 |9     |MMCME2_ADV |     1|
-|10    |FDRE       |    47|
-|11    |IBUF       |     2|
-|12    |OBUF       |    25|
-|13    |OBUFT      |     2|
+|10    |FDCE       |    18|
+|11    |FDRE       |    56|
+|12    |IBUF       |     6|
+|13    |OBUF       |    26|
+|14    |OBUFT      |     2|
 +------+-----------+------+
 
 Report Instance Areas: 
 +------+------------+----------------------+------+
 |      |Instance    |Module                |Cells |
 +------+------------+----------------------+------+
-|1     |top         |                      |   136|
+|1     |top         |                      |   269|
 |2     |  mmcm_inst |clk_wiz_0             |     5|
 |3     |    inst    |clk_wiz_0_clk_wiz     |     5|
-|4     |  u2        |vga_controller_640_60 |    64|
-|5     |  u3        |seven_seg             |    39|
+|4     |  b1        |debouncer             |     6|
+|5     |  b2        |debouncer_0           |     7|
+|6     |  b3        |debouncer_1           |     6|
+|7     |  b4        |debouncer_2           |     6|
+|8     |  u1        |vga_blocks            |   157|
+|9     |    u2      |vga_controller_640_60 |   109|
+|10    |  u3        |seven_seg             |    49|
 +------+------------+----------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:02:13 ; elapsed = 00:02:18 . Memory (MB): peak = 1021.648 ; gain = 409.629
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 992.164 ; gain = 365.855
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 22 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:33 ; elapsed = 00:02:07 . Memory (MB): peak = 1021.648 ; gain = 315.805
-Synthesis Optimization Complete : Time (s): cpu = 00:02:13 ; elapsed = 00:02:18 . Memory (MB): peak = 1021.648 ; gain = 409.629
+Synthesis finished with 0 errors, 0 critical warnings and 2 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:12 ; elapsed = 00:00:16 . Memory (MB): peak = 992.164 ; gain = 242.320
+Synthesis Optimization Complete : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 992.164 ; gain = 365.855
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1021.648 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 5 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 13 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1031.887 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1001.035 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-67 Infos, 81 Warnings, 32 Critical Warnings and 0 Errors encountered.
+43 Infos, 6 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:02:37 ; elapsed = 00:02:47 . Memory (MB): peak = 1031.887 ; gain = 692.859
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1031.887 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1001.035 ; gain = 613.781
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1001.035 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-INFO: [Common 17-1381] The checkpoint 'C:/Users/Nam Tran/Documents/ECE3829LAB3/project_3/project_3.runs/synth_1/lab3_top.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/hqureshi/Documents/project3_bk/project_3.runs/synth_1/lab3_top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file lab3_top_utilization_synth.rpt -pb lab3_top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Feb 18 09:07:11 2020...
+INFO: [Common 17-206] Exiting Vivado at Tue Feb 18 11:33:28 2020...

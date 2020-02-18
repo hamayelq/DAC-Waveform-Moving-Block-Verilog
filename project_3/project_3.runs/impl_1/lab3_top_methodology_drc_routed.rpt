@@ -1,8 +1,8 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Tue Feb 18 09:12:09 2020
-| Host         : DESKTOP-1GCDH6O running 64-bit major release  (build 9200)
+| Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
+| Date         : Tue Feb 18 11:34:21 2020
+| Host         : AK113-03 running 64-bit major release  (build 9200)
 | Command      : report_methodology -file lab3_top_methodology_drc_routed.rpt -pb lab3_top_methodology_drc_routed.pb -rpx lab3_top_methodology_drc_routed.rpx
 | Design       : lab3_top
 | Device       : xc7a35tcpg236-1
@@ -23,12 +23,12 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 6
+             Violations found: 10
 +-----------+------------------+------------------------------------------------+------------+
 | Rule      | Severity         | Description                                    | Violations |
 +-----------+------------------+------------------------------------------------+------------+
 | TIMING-6  | Critical Warning | No common primary clock between related clocks | 2          |
-| TIMING-17 | Critical Warning | Non-clocked sequential cell                    | 4          |
+| TIMING-17 | Critical Warning | Non-clocked sequential cell                    | 8          |
 +-----------+------------------+------------------------------------------------+------------+
 
 2. REPORT DETAILS
@@ -61,6 +61,26 @@ Related violations: <none>
 TIMING-17#4 Critical Warning
 Non-clocked sequential cell  
 The clock pin u3/ANODE_reg[3]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#5 Critical Warning
+Non-clocked sequential cell  
+The clock pin u3/switchChoice_reg[0]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#6 Critical Warning
+Non-clocked sequential cell  
+The clock pin u3/switchChoice_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#7 Critical Warning
+Non-clocked sequential cell  
+The clock pin u3/switchChoice_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#8 Critical Warning
+Non-clocked sequential cell  
+The clock pin u3/switchChoice_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 
