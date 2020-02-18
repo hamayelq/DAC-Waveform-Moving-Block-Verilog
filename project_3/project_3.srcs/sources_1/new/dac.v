@@ -143,3 +143,75 @@ module DAC(
                         nextState <= s3;
                         shiftState <= 1'b1;
                 
+                        
+                        //noclue if this works man
+`timescale 1ns / 1ps
+
+module DAC(
+    input clk,
+    input reset,
+    input selDC,
+    input selSaw,
+
+    output SCLK,
+    output reg SYNC,
+    );
+
+    assign SCLK = clk;
+
+    reg [4:0] sawVal;
+
+    //100KHz 
+    reg [7:0] count;
+
+    always @(posedge clk)
+        if(count == 100 - 1)
+            count <= 0;
+        else
+            count <= count + 1'b1;
+    
+    wire clk_en = count == 0;
+
+    //shift reg
+    reg [15:0] shiftReg;
+
+    reg [4:0]  shiftState;
+
+    always @(negedge clk, posedge reset)
+        if(reset) begin
+            SYNC <= 1;
+            sawVal <= 0;
+            shiftReg <= 0;
+            shiftState <= 0;
+        end
+
+        else begin
+            if(clk_en) begin
+                //25 vals per cycle yaheard
+                if(sawVal == 24)
+                    sawVal <= 0;
+                else
+                    sawVal <= sawVal + 1'b1;
+                
+                if(selSaw)
+                    shiftReg <= {8'b0, sawVal, 3'b0};
+                else if (selDC)
+                    shiftReg <= {8'b0, 8'hff}; //constant 3.3V
+                else
+                    shiftReg <= {8'b0, 8'b0};
+                
+                shiftState <= 1;
+                SYNC <= 0;
+
+            end
+
+        if(shiftState <= 5'd16)
+            SYNC <= 1;
+
+        if(!SYNC) begin
+            shiftReg <= {shiftReg[14:0], shiftReg[15]};
+            shiftState <= shiftState + 1'b1;
+        end
+    end
+
+endmodule
