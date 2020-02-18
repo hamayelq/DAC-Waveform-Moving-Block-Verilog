@@ -14,19 +14,33 @@ module lab3_top(
     output [6:0] SEG,
     output [3:0] ANODE,
     output hSync,
-    output vSync,
-    output CS,
-    output SCLK
-);
+    output vSync
+//    output CS,
+//    output SCLK
+    );
 
     wire clk_10M;
     wire clk_25M;
 
-    //10KHz clk_en, refer to lab assignment
+    //100KHz clk
+    wire clk_100KHz;
+    reg [6:0] counter100k;
+
+    always @(posedge clk_10M, posedge reset)    //keeping CS and SCLK synced, not from FPGA clock
+        if(reset)
+            counter100k <= 0;
+        else if(counter100k == 100-1)
+            counter100k <= 0;
+        else
+            counter100k <= counter100k + 1'b1;
+    
+    assign clk_100KHz = counter100k > 16; //down for 16 SCLK cycles
+
+    //1KHz clk_en, refer to lab assignment
     wire clk_en;
     reg [14:0] counter25k;
 
-    always @(posedge clk, posedge reset)
+    always @(posedge clk_25M, posedge reset)
         if(reset)
             counter25k <= 0;
         else if(counter25k <= 25000 - 1)
@@ -34,17 +48,45 @@ module lab3_top(
         else
             counter25k <= counter25k + 1;
 
-    assign clk_en = (counter25k == 25000 - 1) ? 1'b1 : 1'b0;;
+    assign clk_en = counter25k == 25000 - 1; //1KHz
 
-    wire locked; //locked signal
-    //instantiate MMCM clock here
+    //33Hz clock, or 30ish ms for debouncer and vga movement logic i think
+    wire clk30ms;
+    reg [4:0] count;
+
+    always @(posedge clk_25M, posedge reset)
+        if(reset || clk_en == 0)
+            count <= 0;
+        else
+            if(count == 30 - 1)
+                count <= 0;
+            else
+                count <= count + 1'b1;
+        
+    assign clk30ms = count == 0;
     
+   
+    wire locked; //locked signal
+    wire blank;
     wire [10:0] hCount;
     wire [10:0] vCount;
     wire u, d, l, r; //debounced
     wire [4:0] hPos;
     wire [3:0] vPos;
     wire [3:0] A, B, C, D;
+
+    //instantiate MMCM clock here
+    clk_wiz_0 mmcm_inst(
+        // Clock out ports
+        .clk_25M(clk_25M),     // output clk_25M
+        .clk_10M(clk_10M),     // output clk_10M
+         // Status and control signals
+        .reset(reset), // input reset
+        .locked(locked),       // output locked
+        // Clock in ports
+        .clk_in1(clk)
+    );      // input clk_in1
+    
 
     //7 seg display logic
     assign B = vPos >= 10 ? 4'b0001 : 4'b0000; //if above 10, first dig 1
@@ -53,10 +95,41 @@ module lab3_top(
     assign C = hPos >= 10 ? hPos - 10 : hPos[3:0]; //same logic A
 
     //debounce signals wtf do I do here???
+    debouncer b1(
+        .clk(clk_25M),
+        .reset(reset),
+        .clk_en(clk_en),
+        .in(uBtn),
+        .out(u)
+    );
+
+    debouncer b2(
+        .clk(clk_25M),
+        .reset(reset),
+        .clk_en(clk_en),
+        .in(dBtn),
+        .out(d)
+    );
+
+    debouncer b3(
+        .clk(clk_25M),
+        .reset(reset),
+        .clk_en(clk_en),
+        .in(rBtn),
+        .out(r)
+    );
+
+    debouncer b4(
+        .clk(clk_25M),
+        .reset(reset),
+        .clk_en(clk_en),
+        .in(lBtn),
+        .out(l)
+    );
 
     //instantiate vga_blocks
     vga_blocks u1(
-        .clk(whatdoiputhere),
+        .clk(clk30ms),
         .rBtn(r),
         .lBtn(l),
         .uBtn(u),
@@ -93,7 +166,7 @@ module lab3_top(
         .SEG_TOP(SEG)
     );
 
-    assign SCLK = clk_10M;
-//    assign CS = whatsignal;
+    // assign SCLK = clk_10M;
+    // assign CS = clk_100KHz;
 
 endmodule
