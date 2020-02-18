@@ -69,8 +69,6 @@ module lab3_top(
    
     wire locked; //locked signal
     wire blank;
-    wire [10:0] hCount;
-    wire [10:0] vCount;
     wire u, d, l, r; //debounced
     wire [4:0] hPos;
     wire [3:0] vPos;
@@ -132,31 +130,20 @@ module lab3_top(
 
     //instantiate vga_blocks
     vga_blocks u1(
-        .clk(clk30ms),
+        .clk(clk_25M),
         .rBtn(r),
         .lBtn(l),
         .uBtn(u),
         .dBtn(d),
         .blank(blank),
         .reset(reset),
-        .vcount(vCount),
-        .hcount(hCount),
         .hPos(hPos),
         .vPos(vPos),
         .r(vgaRed),
         .g(vgaGreen),
-        .b(vgaBlue)
-    );
-
-    //instantiate vga display
-    vga_controller_640_60 u2(
-        .rst(reset), 
-        .pixel_clk(clk_25M), 
-        .HS(hSync), 
-        .VS(vSync), 
-        .hcount(hCount), 
-        .vcount(vCount), 
-        .blank(blank)
+        .b(vgaBlue),
+        .hSync(hSync),
+        .vSync(vSync)
     );
 
     seven_seg u3(

@@ -8,13 +8,13 @@ module vga_blocks(
     input dBtn,
     input blank,
     input reset,
-    input [10:0] vcount,
-    input [10:0] hcount,
     output [4:0] hPos,
     output [3:0] vPos,
     output [3:0] r,
     output [3:0] g,
-    output [3:0] b
+    output [3:0] b,
+    output hSync,
+    output vSync
     );
 
     reg [4:0] horPos;
@@ -25,6 +25,20 @@ module vga_blocks(
                           //similar to blank, not quite
     parameter zeroes = 4'b0;
     parameter ones = 4'b0;
+
+    wire [10:0] vcount;
+    wire [10:0] hcount;
+   
+    //instantiate vga display
+    vga_controller_640_60 u2(
+        .rst(reset), 
+        .pixel_clk(clk), 
+        .HS(hSync), 
+        .VS(vSync), 
+        .hcount(hcount), 
+        .vcount(vcount), 
+        .blank(blank)
+    );
 
     always @(posedge clk, posedge reset) begin
         if(reset) begin
