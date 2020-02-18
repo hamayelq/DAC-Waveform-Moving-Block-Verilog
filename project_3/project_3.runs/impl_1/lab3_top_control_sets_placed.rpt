@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date         : Tue Feb 18 11:34:03 2020
+| Date         : Tue Feb 18 18:35:40 2020
 | Host         : AK113-03 running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file lab3_top_control_sets_placed.rpt
 | Design       : lab3_top
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |    10 |
-|    Minimum number of control sets                        |    10 |
+| Total control sets                                       |    13 |
+|    Minimum number of control sets                        |    13 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |    46 |
+| Unused register locations in slices containing registers |    56 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,11 +39,11 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |    10 |
-| >= 0 to < 4        |     2 |
-| >= 4 to < 6        |     2 |
+| Total control sets |    13 |
+| >= 0 to < 4        |     3 |
+| >= 4 to < 6        |     3 |
 | >= 6 to < 8        |     0 |
-| >= 8 to < 10       |     3 |
+| >= 8 to < 10       |     4 |
 | >= 10 to < 12      |     2 |
 | >= 12 to < 14      |     0 |
 | >= 14 to < 16      |     1 |
@@ -58,12 +58,12 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              17 |           11 |
-| No           | No                    | Yes                    |               9 |            4 |
-| No           | Yes                   | No                     |              28 |           11 |
+| No           | No                    | No                     |              25 |           13 |
+| No           | No                    | Yes                    |              10 |            4 |
+| No           | Yes                   | No                     |              28 |           12 |
 | Yes          | No                    | No                     |               0 |            0 |
-| Yes          | No                    | Yes                    |               9 |            3 |
-| Yes          | Yes                   | No                     |              11 |            4 |
+| Yes          | No                    | Yes                    |              14 |            4 |
+| Yes          | Yes                   | No                     |              11 |            3 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
@@ -73,15 +73,18 @@ Table of Contents
 +--------------------------+----------------------------+----------------------------+------------------+----------------+
 |       Clock Signal       |        Enable Signal       |      Set/Reset Signal      | Slice Load Count | Bel Load Count |
 +--------------------------+----------------------------+----------------------------+------------------+----------------+
-|  mmcm_inst/inst/clk_out1 |                            | u1/u2/VS0                  |                1 |              1 |
+|  mmcm_inst/inst/clk_out2 |                            | reset_IBUF                 |                1 |              1 |
 |  mmcm_inst/inst/clk_out1 |                            | u1/u2/HS0                  |                1 |              1 |
+|  mmcm_inst/inst/clk_out1 |                            | u1/u2/VS0                  |                1 |              1 |
 |  mmcm_inst/inst/clk_out1 | u1/vertPos[3]_i_1_n_0      | reset_IBUF                 |                1 |              4 |
+|  mmcm_inst/inst/clk_out2 | d1/shiftState              | reset_IBUF                 |                1 |              5 |
 |  mmcm_inst/inst/clk_out1 | u1/horPos                  | reset_IBUF                 |                2 |              5 |
-|  u3/clk_en_reg_n_0       |                            |                            |                4 |              8 |
-|  mmcm_inst/inst/clk_out1 |                            |                            |                7 |              9 |
-|  mmcm_inst/inst/clk_out1 |                            | reset_IBUF                 |                4 |              9 |
-|  mmcm_inst/inst/clk_out1 |                            | u1/u2/hcounter[10]_i_1_n_0 |                5 |             11 |
-|  mmcm_inst/inst/clk_out1 | u1/u2/vcounter[10]_i_2_n_0 | u1/u2/vcounter[10]_i_1_n_0 |                4 |             11 |
+|  mmcm_inst/inst/clk_out2 |                            |                            |                4 |              8 |
+|  u3/clk_en_reg_n_0       |                            |                            |                3 |              8 |
+|  mmcm_inst/inst/clk_out1 |                            |                            |                6 |              9 |
+|  mmcm_inst/inst/clk_out1 |                            | reset_IBUF                 |                3 |              9 |
+|  mmcm_inst/inst/clk_out1 |                            | u1/u2/hcounter[10]_i_1_n_0 |                6 |             11 |
+|  mmcm_inst/inst/clk_out1 | u1/u2/vcounter[10]_i_2_n_0 | u1/u2/vcounter[10]_i_1_n_0 |                3 |             11 |
 |  mmcm_inst/inst/clk_out1 |                            | u3/counter[15]_i_1_n_0     |                4 |             15 |
 +--------------------------+----------------------------+----------------------------+------------------+----------------+
 

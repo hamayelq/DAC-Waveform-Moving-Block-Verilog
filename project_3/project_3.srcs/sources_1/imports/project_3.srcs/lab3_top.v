@@ -7,6 +7,7 @@ module lab3_top(
     input dBtn,
     input lBtn,
     input rBtn,
+    input sel,
 
     output [3:0] vgaRed,
     output [3:0] vgaGreen,
@@ -123,6 +124,13 @@ module lab3_top(
         .D(D),
         .ANODE(an),
         .SEG_TOP(seg)
+    );
+    
+    dac d1(
+        .clk(clk_10M),
+        .reset(reset),
+        .sel(sel),
+        .sync(sync)
     );
 
 endmodule

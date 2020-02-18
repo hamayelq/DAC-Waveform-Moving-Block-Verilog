@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date             : Tue Feb 18 11:34:21 2020
+| Date             : Tue Feb 18 18:35:59 2020
 | Host             : AK113-03 running 64-bit major release  (build 9200)
 | Command          : report_power -file lab3_top_power_routed.rpt -pb lab3_top_power_summary_routed.pb -rpx lab3_top_power_routed.rpx
 | Design           : lab3_top
@@ -53,12 +53,12 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |    <0.001 |       10 |       --- |             --- |
-| Slice Logic    |    <0.001 |      249 |       --- |             --- |
-|   LUT as Logic |    <0.001 |      104 |     20800 |            0.50 |
-|   Register     |    <0.001 |       74 |     41600 |            0.18 |
+| Slice Logic    |    <0.001 |      286 |       --- |             --- |
+|   LUT as Logic |    <0.001 |      119 |     20800 |            0.57 |
+|   Register     |    <0.001 |       88 |     41600 |            0.21 |
 |   CARRY4       |    <0.001 |       12 |      8150 |            0.15 |
-|   Others       |     0.000 |       18 |       --- |             --- |
-| Signals        |    <0.001 |      144 |       --- |             --- |
+|   Others       |     0.000 |       20 |       --- |             --- |
+| Signals        |    <0.001 |      167 |       --- |             --- |
 | MMCM           |     0.106 |        1 |         5 |           20.00 |
 | I/O            |     0.001 |       34 |       106 |           32.08 |
 | Static Power   |     0.072 |          |           |                 |
