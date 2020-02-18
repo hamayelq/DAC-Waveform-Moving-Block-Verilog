@@ -57,22 +57,22 @@ module seven_seg (
              end
        end
        
-    parameter display0 = 7'b1000000;
-    parameter display1 = 7'b1111001;
-    parameter display2 = 7'b0100100;
-    parameter display3 = 7'b0110000;
-    parameter display4 = 7'b0011001;
-    parameter display5 = 7'b0010010;
-    parameter display6 = 7'b0000010;
-    parameter display7 = 7'b1111000;
+    parameter display0 = 7'b0000001;
+    parameter display1 = 7'b1001111;
+    parameter display2 = 7'b0010010;
+    parameter display3 = 7'b0000110;
+    parameter display4 = 7'b1001100;
+    parameter display5 = 7'b0100100;
+    parameter display6 = 7'b0100000;
+    parameter display7 = 7'b0001111;
     parameter display8 = 7'b0000000;
-    parameter display9 = 7'b0010000;
+    parameter display9 = 7'b0000100;
     parameter displayA = 7'b0001000;
-    parameter displayB = 7'b0000011;
-    parameter displayC = 7'b1000110;
-    parameter displayD = 7'b0100001;
-    parameter displayE = 7'b0000110;
-    parameter displayF = 7'b0001110;
+    parameter displayB = 7'b1100000;
+    parameter displayC = 7'b0110001;
+    parameter displayD = 7'b1000010;
+    parameter displayE = 7'b0110000;
+    parameter displayF = 7'b0111000;
     
     always @(switchChoice)
         begin
