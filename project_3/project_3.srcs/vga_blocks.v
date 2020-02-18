@@ -38,17 +38,17 @@ module vga_blocks(
             pressed = 1'b1;
         end
 
-        else if(dBtn && vertPos != 14 && !moved) begin
+        else if(dBtn && vertPos != 14 && !pressed) begin
             vertPos = vertPos + 1'b1;
             pressed = 1'b1;
         end
 
-        else if(lBtn && horPos != 0 && !moved) begin
+        else if(lBtn && horPos != 0 && !pressed) begin
             horPos = horPos - 1'b1;
             pressed = 1'b1;
         end
         
-        else if(rBtn && horPos != 19 && !moved) begin
+        else if(rBtn && horPos != 19 && !pressed) begin
             horPos = horPos + 1'b1;
             pressed = 1'b1;
         end
@@ -63,7 +63,7 @@ module vga_blocks(
         end
     end
 
-    assign blockConstraint = (vcount >= 32 * verPos && vcount <= 32 * verPos + 32)
+    assign blockConstraint = (vcount >= 32 * vertPos && vcount <= 32 * vertPos + 32)
                                 &&
                              (hcount >= 32 * horPos && hcount <= 32 * horPos + 32);
 
