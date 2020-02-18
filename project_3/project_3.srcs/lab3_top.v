@@ -11,12 +11,13 @@ module lab3_top(
     output [3:0] vgaRed,
     output [3:0] vgaGreen,
     output [3:0] vgaBlue,
-    output [6:0] SEG,
-    output [3:0] ANODE,
+    output [6:0] seg,
+    output [3:0] an,
     output hSync,
-    output vSync
-//    output CS,
-//    output SCLK
+    output vSync,
+    
+    output sync,
+    output sdata
     );
 
     wire clk_10M;
@@ -78,15 +79,14 @@ module lab3_top(
     //instantiate MMCM clock here
     clk_wiz_0 mmcm_inst(
         // Clock out ports
-        .clk_25M(clk_25M),     // output clk_25M
-        .clk_10M(clk_10M),     // output clk_10M
+        .clk_out1(clk_25M),     // output clk_25M
+        .clk_out2(clk_10M),     // output clk_10M
          // Status and control signals
         .reset(reset), // input reset
         .locked(locked),       // output locked
         // Clock in ports
-        .clk_in1(clk)
+        .clk_in1(clk_fpga)
     );      // input clk_in1
-    
 
     //7 seg display logic
     assign B = vPos >= 10 ? 4'b0001 : 4'b0000; //if above 10, first dig 1
@@ -95,10 +95,7 @@ module lab3_top(
     assign C = hPos >= 10 ? hPos - 10 : hPos[3:0]; //same logic A
     
     // SPI
-    assign SCLK = clk_10M;
-//    assign CS = whatsignal;
-
-
+    assign sclk = clk_10M;
 
     //debounce signals wtf do I do here???
     debouncer b1(
@@ -168,11 +165,8 @@ module lab3_top(
         .B(B),
         .C(C),
         .D(D),
-        .ANODE(ANODE),
-        .SEG_TOP(SEG)
+        .ANODE(an),
+        .SEG_TOP(seg)
     );
-
-    // assign SCLK = clk_10M;
-    // assign CS = clk_100KHz;
 
 endmodule
