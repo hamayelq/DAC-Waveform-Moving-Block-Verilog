@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 
 module lab3_top(
-    input clk,
+    input clk_fpga,
     input reset,
     input uBtn,
     input dBtn,
@@ -15,18 +15,15 @@ module lab3_top(
     output [3:0] ANODE,
     output hSync,
     output vSync,
-    output CS,
-    output SCLK
+    output sclk
 );
 
-    wire clk_10M;
-    wire clk_25M;
-
     //10KHz clk_en, refer to lab assignment
+    // Fix this - 100kHz, also move to dac.v
     wire clk_en;
     reg [14:0] counter25k;
 
-    always @(posedge clk, posedge reset)
+    always @(posedge clk_fpga, posedge reset)
         if(reset)
             counter25k <= 0;
         else if(counter25k <= 25000 - 1)
@@ -34,10 +31,9 @@ module lab3_top(
         else
             counter25k <= counter25k + 1;
 
-    assign clk_en = (counter25k == 25000 - 1) ? 1'b1 : 1'b0;;
+    assign clk_en = (counter25k == 25000 - 1) ? 1'b1 : 1'b0;
 
     wire locked; //locked signal
-    //instantiate MMCM clock here
     
     wire [10:0] hCount;
     wire [10:0] vCount;
@@ -51,12 +47,18 @@ module lab3_top(
     assign A = vPos >= 10 ? vPos - 10 : vPos; //display digit between 0 - 9
     assign D = hPos >= 10 ? 4'b0001 : 4'b0000; //same logic B
     assign C = hPos >= 10 ? hPos - 10 : hPos[3:0]; //same logic A
+    
+    // SPI
+    assign SCLK = clk_10M;
+//    assign CS = whatsignal;
+
+
 
     //debounce signals wtf do I do here???
 
     //instantiate vga_blocks
     vga_blocks u1(
-        .clk(whatdoiputhere),
+        .clk(clk_25M),
         .rBtn(r),
         .lBtn(l),
         .uBtn(u),
@@ -93,7 +95,17 @@ module lab3_top(
         .SEG_TOP(SEG)
     );
 
-    assign SCLK = clk_10M;
-//    assign CS = whatsignal;
-
+//instantiate MMCM clock here
+  clk_wiz_0 instance_name
+   (
+    // Clock out ports
+    .clk_out1(clk_25M),     // output clk_out1
+    .clk_out2(clk_10M),     // output clk_out2
+    // Status and control signals
+    .reset(reset), // input reset
+    .locked(locked),       // output locked
+   // Clock in ports
+    .clk_in1(clk_fpga));      // input clk_in1
+    
+    
 endmodule

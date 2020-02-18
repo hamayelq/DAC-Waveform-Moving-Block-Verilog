@@ -23,7 +23,6 @@ module vga_blocks(
 
     wire blockConstraint; //constraints within which block may be drawn on screen
                           //similar to blank, not quite
-
     parameter zeroes = 4'b0;
     parameter ones = 4'b0;
 
