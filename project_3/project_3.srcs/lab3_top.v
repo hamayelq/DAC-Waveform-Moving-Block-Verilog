@@ -17,7 +17,8 @@ module lab3_top(
     output vSync,
     
     output sync,
-    output sdata
+    output sdata,
+    output sck
     );
 
     wire clk_10M;
@@ -50,29 +51,21 @@ module lab3_top(
             counter25k <= counter25k + 1;
 
     assign clk_en = counter25k == 25000 - 1; //1KHz
-
-    //33Hz clock, or 30ish ms for debouncer and vga movement logic i think
-    wire clk30ms;
-    reg [4:0] count;
-
-    always @(posedge clk_25M, posedge reset)
-        if(reset || clk_en == 0)
-            count <= 0;
-        else
-            if(count == 30 - 1)
-                count <= 0;
-            else
-                count <= count + 1'b1;
-        
-    assign clk30ms = count == 0;
-    
    
     wire locked; //locked signal
-    wire blank;
     wire u, d, l, r; //debounced
     wire [4:0] hPos;
     wire [3:0] vPos;
     wire [3:0] A, B, C, D;
+
+    //7 seg display logic
+    assign B = vPos >= 10 ? 4'b0001 : 4'b0000; //if above 10, first dig 1
+    assign A = vPos >= 10 ? vPos - 10 : vPos; //display digit between 0 - 9
+    assign D = hPos >= 10 ? 4'b0001 : 4'b0000; //same logic B
+    assign C = hPos >= 10 ? hPos - 10 : hPos[3:0]; //same logic A
+    
+    // SPI
+    assign sclk = clk_10M;
 
     //instantiate MMCM clock here
     clk_wiz_0 mmcm_inst(
@@ -86,16 +79,7 @@ module lab3_top(
         .clk_in1(clk_fpga)
     );      // input clk_in1
 
-    //7 seg display logic
-    assign B = vPos >= 10 ? 4'b0001 : 4'b0000; //if above 10, first dig 1
-    assign A = vPos >= 10 ? vPos - 10 : vPos; //display digit between 0 - 9
-    assign D = hPos >= 10 ? 4'b0001 : 4'b0000; //same logic B
-    assign C = hPos >= 10 ? hPos - 10 : hPos[3:0]; //same logic A
-    
-    // SPI
-    assign sclk = clk_10M;
-
-    //debounce signals wtf do I do here???
+    //debounce signals
     debouncer b1(
         .clk(clk_25M),
         .reset(reset),
@@ -135,7 +119,6 @@ module lab3_top(
         .lBtn(l),
         .uBtn(u),
         .dBtn(d),
-        .blank(blank),
         .reset(reset),
         .hPos(hPos),
         .vPos(vPos),

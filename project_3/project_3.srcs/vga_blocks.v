@@ -6,7 +6,6 @@ module vga_blocks(
     input lBtn,
     input uBtn,
     input dBtn,
-    input blank,
     input reset,
     output [4:0] hPos,
     output [3:0] vPos,
@@ -23,9 +22,10 @@ module vga_blocks(
 
     wire blockConstraint; //constraints within which block may be drawn on screen
                           //similar to blank, not quite
-    parameter zeroes = 4'b0;
-    parameter ones = 4'b0;
-
+    parameter zeroes = 4'h0;
+    parameter ones = 4'hf;
+    
+    wire blank;
     wire [10:0] vcount;
     wire [10:0] hcount;
    
