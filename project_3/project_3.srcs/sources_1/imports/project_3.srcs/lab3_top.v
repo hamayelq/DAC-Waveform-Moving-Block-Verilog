@@ -130,7 +130,8 @@ module lab3_top(
         .clk(clk_10M),
         .reset(reset),
         .sel(sel),
-        .sync(sync)
+        .sync(sync),
+        .dout(sdata)
     );
 
 endmodule
