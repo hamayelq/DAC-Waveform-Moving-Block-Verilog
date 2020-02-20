@@ -11,11 +11,11 @@ module dac(
     reg [7:0] sawVal = 8'h0f;
         
     // Value of control register
-    parameter [7:0] ctl_reg = 8'b0001_0010; // DAC A active, B power down, update DAC A from input register 
+    parameter [7:0] ctl_reg = 8'b0000_0000; // DAC A active, B power down, update DAC A from input register 
 
     //100KHz clock enable signal (for data transfer)
     reg [7:0] count_100;
-    always @(posedge clk)
+    always @(negedge clk)
         if(count_100 == 100 - 1)
             count_100 <= 0;
         else
@@ -35,7 +35,7 @@ module dac(
     reg [15:0] shift_reg;
     
     // Handle reset
-    always @ (posedge clk, posedge reset)
+    always @ (negedge clk, posedge reset)
         if(reset)
             state <= rst;
         else
@@ -71,7 +71,7 @@ module dac(
 
 // 5-bit counter, from 0 to 15;
 reg [4:0] count_16;
-always @ (posedge clk)
+always @ (negedge clk)
     // Get everything ready, load up shift reg, reset count
     if(state == load) begin
         count_16 <= 0;
@@ -89,48 +89,5 @@ always @ (posedge clk)
 assign finish = (count_16 == 5'd15);
 assign dout = shift_reg[15];                        // Sdata = MSB
 assign sync = (state == shift) ? 1'b0 : 1'b1;       // Pull low only on shifting
-
-//  //shift reg
-//    reg [15:0] shiftReg;
-//    reg [4:0]  shiftState;
-
-//    always @(posedge clk, posedge reset)
-//        if(reset) begin
-//            sync <= 1;
-//            sawVal <= 0;
-//            shiftReg <= 0;
-//            shiftState <= 0;
-//        end
-
-//        else begin
-//            if(clk_en) begin
-//                //25 vals per cycle yaheard
-//                if(sawVal == 24)
-//                    sawVal <= 0;
-//                else
-//                    sawVal <= sawVal + 1'b1;
-                
-//                if(sel == 1'b1)
-//                    shiftReg <= {ctl, sawVal, 3'b0};
-//                else if(sel == 1'b0)
-//                    shiftReg <= {ctl, 8'hff};
-//                else
-//                    shiftReg <= {ctl, 8'h00};
-                    
-//                shiftState <= 1;
-//                sync <= 0;
-//            end
-
-//            if(shiftState <= 5'd16)
-//                sync <= 0;
-
-//            if(!sync) begin
-            
-//                shiftReg = {shiftReg[14:0], shiftReg[0]};
-//                shiftState = shiftState + 1'b1;
-//            end
-//    end
-    
-//    assign dout = shiftReg[15];
 
 endmodule

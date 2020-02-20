@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date         : Thu Feb 20 16:15:58 2020
+| Date         : Thu Feb 20 16:45:27 2020
 | Host         : AK113-06 running 64-bit major release  (build 9200)
 | Command      : report_utilization -file lab3_top_utilization_synth.rpt -pb lab3_top_utilization_synth.pb
 | Design       : lab3_top
@@ -56,8 +56,8 @@ Table of Contents
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
 | 20    |          Yes |           - |        Reset |
-| 9     |          Yes |         Set |            - |
-| 76    |          Yes |       Reset |            - |
+| 7     |          Yes |         Set |            - |
+| 78    |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -149,18 +149,18 @@ Table of Contents
 +------------+------+---------------------+
 |  Ref Name  | Used | Functional Category |
 +------------+------+---------------------+
-| FDRE       |   76 |        Flop & Latch |
-| LUT2       |   45 |                 LUT |
-| LUT6       |   39 |                 LUT |
-| LUT3       |   31 |                 LUT |
+| FDRE       |   78 |        Flop & Latch |
+| LUT2       |   50 |                 LUT |
+| LUT6       |   37 |                 LUT |
+| LUT3       |   33 |                 LUT |
+| LUT4       |   29 |                 LUT |
 | OBUF       |   28 |                  IO |
-| LUT4       |   27 |                 LUT |
-| LUT5       |   26 |                 LUT |
+| LUT5       |   23 |                 LUT |
 | FDCE       |   20 |        Flop & Latch |
 | CARRY4     |   12 |          CarryLogic |
 | LUT1       |   10 |                 LUT |
-| FDSE       |    9 |        Flop & Latch |
 | IBUF       |    7 |                  IO |
+| FDSE       |    7 |        Flop & Latch |
 | BUFG       |    3 |               Clock |
 | MMCME2_ADV |    1 |               Clock |
 +------------+------+---------------------+
