@@ -7,7 +7,7 @@ module lab3_top(
     input dBtn,
     input lBtn,
     input rBtn,
-    input sel,
+    input [8:0] sel,
 
     output [3:0] vgaRed,
     output [3:0] vgaGreen,

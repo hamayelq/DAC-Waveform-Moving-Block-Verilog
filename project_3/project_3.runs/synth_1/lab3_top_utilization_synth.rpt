@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date         : Thu Feb 20 16:45:27 2020
+| Date         : Thu Feb 20 17:47:29 2020
 | Host         : AK113-06 running 64-bit major release  (build 9200)
 | Command      : report_utilization -file lab3_top_utilization_synth.rpt -pb lab3_top_utilization_synth.pb
 | Design       : lab3_top
@@ -30,11 +30,11 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             |  127 |     0 |     20800 |  0.61 |
-|   LUT as Logic          |  127 |     0 |     20800 |  0.61 |
+| Slice LUTs*             |  134 |     0 |     20800 |  0.64 |
+|   LUT as Logic          |  134 |     0 |     20800 |  0.64 |
 |   LUT as Memory         |    0 |     0 |      9600 |  0.00 |
-| Slice Registers         |  105 |     0 |     41600 |  0.25 |
-|   Register as Flip Flop |  105 |     0 |     41600 |  0.25 |
+| Slice Registers         |  112 |     0 |     41600 |  0.27 |
+|   Register as Flip Flop |  112 |     0 |     41600 |  0.27 |
 |   Register as Latch     |    0 |     0 |     41600 |  0.00 |
 | F7 Muxes                |    0 |     0 |     16300 |  0.00 |
 | F8 Muxes                |    0 |     0 |      8150 |  0.00 |
@@ -56,8 +56,8 @@ Table of Contents
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
 | 20    |          Yes |           - |        Reset |
-| 7     |          Yes |         Set |            - |
-| 78    |          Yes |       Reset |            - |
+| 0     |          Yes |         Set |            - |
+| 92    |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -90,7 +90,7 @@ Table of Contents
 +-----------------------------+------+-------+-----------+-------+
 |          Site Type          | Used | Fixed | Available | Util% |
 +-----------------------------+------+-------+-----------+-------+
-| Bonded IOB                  |   35 |     0 |       106 | 33.02 |
+| Bonded IOB                  |   43 |     0 |       106 | 40.57 |
 | Bonded IPADs                |    0 |     0 |        10 |  0.00 |
 | Bonded OPADs                |    0 |     0 |         4 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |         5 |  0.00 |
@@ -149,18 +149,17 @@ Table of Contents
 +------------+------+---------------------+
 |  Ref Name  | Used | Functional Category |
 +------------+------+---------------------+
-| FDRE       |   78 |        Flop & Latch |
-| LUT2       |   50 |                 LUT |
-| LUT6       |   37 |                 LUT |
+| FDRE       |   92 |        Flop & Latch |
+| LUT6       |   42 |                 LUT |
+| LUT2       |   40 |                 LUT |
 | LUT3       |   33 |                 LUT |
-| LUT4       |   29 |                 LUT |
+| LUT5       |   32 |                 LUT |
 | OBUF       |   28 |                  IO |
-| LUT5       |   23 |                 LUT |
+| LUT4       |   28 |                 LUT |
 | FDCE       |   20 |        Flop & Latch |
+| IBUF       |   15 |                  IO |
 | CARRY4     |   12 |          CarryLogic |
-| LUT1       |   10 |                 LUT |
-| IBUF       |    7 |                  IO |
-| FDSE       |    7 |        Flop & Latch |
+| LUT1       |   11 |                 LUT |
 | BUFG       |    3 |               Clock |
 | MMCME2_ADV |    1 |               Clock |
 +------------+------+---------------------+

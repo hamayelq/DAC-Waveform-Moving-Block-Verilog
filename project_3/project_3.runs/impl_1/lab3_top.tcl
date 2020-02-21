@@ -175,7 +175,7 @@ set rc [catch {
   create_msg_db write_bitstream.pb
   set_property XPM_LIBRARIES XPM_CDC [current_project]
   catch { write_mem_info -force lab3_top.mmi }
-  write_bitstream -force lab3_top.bit 
+  write_bitstream -force lab3_top.bit -bin_file
   catch {write_debug_probes -quiet -force lab3_top}
   catch {file copy -force lab3_top.ltx debug_nets.ltx}
   close_msg_db -file write_bitstream.pb

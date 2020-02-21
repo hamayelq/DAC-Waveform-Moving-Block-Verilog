@@ -3,71 +3,75 @@
 module dac(
     input clk,                  // 10MHz MMCM Clock
     input reset,                // Reset pin
-    input sel,            // 0 for DC constant, 1 for sawtooth
+    input [8:0] sel,            // First 8 bits are for constant slider, 9th bit is for switching between modes
     output sync,
     output  dout
-    );
-
-    reg [7:0] sawVal = 8'h0f;
+);    
         
-    // Value of control register
-    parameter [7:0] ctl_reg = 8'b0000_0000; // DAC A active, B power down, update DAC A from input register 
+// Value of control register
+parameter [7:0] ctl_reg = 8'b0000_0000; // DAC A active, B power down, update DAC A from input register 
 
-    //100KHz clock enable signal (for data transfer)
-    reg [7:0] count_100;
-    always @(negedge clk)
-        if(count_100 == 100 - 1)
-            count_100 <= 0;
-        else
-            count_100 <= count_100 + 1'b1;
+//100KHz clock enable signal (for data transfer)
+reg [7:0] count_100;
+always @ (negedge clk)
+    if(count_100 == 100 - 1)
+        count_100 <= 0;
+    else
+        count_100 <= count_100 + 1'b1;
     
-    wire clk_en = (count_100 == 0);
+wire clk_en = (count_100 == 0);
     
-    // State machine logic
-    parameter [2:0] rst    = 3'b000,
-                    idle   = 3'b001, 
-                    load   = 3'b010, 
-                    shift  = 3'b011, 
-                    unload = 3'b100;
-                      
-    reg [2:0] state, next_state;
-    wire finish;
-    reg [15:0] shift_reg;
+// State machine logic
+parameter [1:0] rst    = 2'b000,
+                idle   = 2'b001, 
+                load   = 2'b010, 
+                shift  = 2'b011;
+                   
+reg [1:0] state, next_state;
+wire finish;
+reg [15:0] shift_reg;
     
-    // Handle reset
-    always @ (negedge clk, posedge reset)
-        if(reset)
-            state <= rst;
-        else
-            state <= next_state;
+// Handle reset
+always @ (negedge clk, posedge reset)
+    if(reset)
+        state <= rst;
+    else
+        state <= next_state;
     
-    // Handle state switching logic
-    always @ (state, finish, clk_en)
-        case (state)
-        // Reset state. Pull sync high, reset shift reg, bring dout low
-            rst: begin
+// Handle state switching logic
+always @ (state, finish, clk_en)
+    case (state)
+    // Reset state. Pull sync high, reset shift reg, bring dout low
+        rst: begin
+            next_state = idle;
+        end
+    // Wait for clock_enable
+        idle: begin
+            if(clk_en)
+                next_state = load;
+            else 
                 next_state = idle;
-            end
-        // Wait for clock_enable
-            idle: begin
-                if(clk_en)
-                    next_state = load;
-                else 
-                    next_state = idle;
-            end
-        // Load shift register with data
-            load: begin
+        end
+    // Load shift register with data
+        load: begin
+            next_state = shift;
+        end
+    // Return to idle when finish shifting
+        shift: begin
+            if(finish)
+                next_state = idle;
+            else 
                 next_state = shift;
-            end
-        // Return to idle when finish shifting
-            shift: begin
-                if(finish)
-                    next_state = idle;
-                else 
-                    next_state = shift;
-            end
-        endcase
+        end
+    endcase
 
+// Sawtooth
+reg [7:0] sawVal;
+always @ (negedge clk)
+    if(sawVal == 8'd250 && state == load)
+        sawVal <= 8'd0;
+    else if (state == load)
+        sawVal <= sawVal + 8'd10;       
 
 // 5-bit counter, from 0 to 15;
 reg [4:0] count_16;
@@ -75,8 +79,8 @@ always @ (negedge clk)
     // Get everything ready, load up shift reg, reset count
     if(state == load) begin
         count_16 <= 0;
-        if(sel) 
-            shift_reg <= {ctl_reg, 8'hff};
+        if(sel[8]) 
+            shift_reg <= {ctl_reg, sel[7:0]};
         else 
             shift_reg <= {ctl_reg, sawVal};
     end
