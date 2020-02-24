@@ -5,14 +5,14 @@ module dac(
     input reset,                // Reset pin
     input [8:0] sel,            // First 8 bits are for constant slider, 9th bit is for switching between modes
     output sync,
-    output  dout
+    output dout
 );    
         
 // Value of control register
 parameter [7:0] ctl_reg = 8'b0000_0000; // DAC A active, B power down, update DAC A from input register 
 
 //100KHz clock enable signal (for data transfer)
-reg [7:0] count_100;
+reg [7:0] count_100 = 8'b0;
 always @ (negedge clk)
     if(count_100 == 100 - 1)
         count_100 <= 0;
@@ -29,7 +29,7 @@ parameter [1:0] rst    = 2'b000,
                    
 reg [1:0] state, next_state;
 wire finish;
-reg [15:0] shift_reg;
+reg [15:0] shift_reg = 16'b0;
     
 // Handle reset
 always @ (negedge clk, posedge reset)
@@ -66,7 +66,7 @@ always @ (state, finish, clk_en)
     endcase
 
 // Sawtooth
-reg [7:0] sawVal;
+reg [7:0] sawVal = 8'b0;
 always @ (negedge clk)
     if(sawVal == 8'd250 && state == load)
         sawVal <= 8'd0;
@@ -74,7 +74,7 @@ always @ (negedge clk)
         sawVal <= sawVal + 8'd10;       
 
 // 5-bit counter, from 0 to 15;
-reg [4:0] count_16;
+reg [4:0] count_16 = 5'b0;
 always @ (negedge clk)
     // Get everything ready, load up shift reg, reset count
     if(state == load) begin

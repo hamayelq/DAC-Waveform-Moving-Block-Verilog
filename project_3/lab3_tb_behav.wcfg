@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="lab3_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="lab3_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="501000000001fs"></ZoomEndTime>
+      <Cursor1Time time="250000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="138"></NameColumnWidth>
+      <ValueColumnWidth column_width="96"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="13" />
+   <wvobject fp_name="/lab3_tb/utt/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/lab3_tb/utt/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/lab3_tb/utt/sel" type="array">
+      <obj_property name="ElementShortName">sel[8:0]</obj_property>
+      <obj_property name="ObjectShortName">sel[8:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/lab3_tb/utt/sync" type="logic">
+      <obj_property name="ElementShortName">sync</obj_property>
+      <obj_property name="ObjectShortName">sync</obj_property>
+   </wvobject>
+   <wvobject fp_name="/lab3_tb/utt/dout" type="logic">
+      <obj_property name="ElementShortName">dout</obj_property>
+      <obj_property name="ObjectShortName">dout</obj_property>
+   </wvobject>
+   <wvobject fp_name="/lab3_tb/utt/count_100" type="array">
+      <obj_property name="ElementShortName">count_100[7:0]</obj_property>
+      <obj_property name="ObjectShortName">count_100[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/lab3_tb/utt/clk_en" type="logic">
+      <obj_property name="ElementShortName">clk_en</obj_property>
+      <obj_property name="ObjectShortName">clk_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/lab3_tb/utt/state" type="array">
+      <obj_property name="ElementShortName">state[1:0]</obj_property>
+      <obj_property name="ObjectShortName">state[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/lab3_tb/utt/next_state" type="array">
+      <obj_property name="ElementShortName">next_state[1:0]</obj_property>
+      <obj_property name="ObjectShortName">next_state[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/lab3_tb/utt/finish" type="logic">
+      <obj_property name="ElementShortName">finish</obj_property>
+      <obj_property name="ObjectShortName">finish</obj_property>
+   </wvobject>
+   <wvobject fp_name="/lab3_tb/utt/shift_reg" type="array">
+      <obj_property name="ElementShortName">shift_reg[15:0]</obj_property>
+      <obj_property name="ObjectShortName">shift_reg[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/lab3_tb/utt/sawVal" type="array">
+      <obj_property name="ElementShortName">sawVal[7:0]</obj_property>
+      <obj_property name="ObjectShortName">sawVal[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/lab3_tb/utt/count_16" type="array">
+      <obj_property name="ElementShortName">count_16[4:0]</obj_property>
+      <obj_property name="ObjectShortName">count_16[4:0]</obj_property>
+   </wvobject>
+</wave_config>
